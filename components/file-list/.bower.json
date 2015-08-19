@@ -1,0 +1,43 @@
+{
+  "name": "file-list",
+  "authors": [
+    "Winston Howes <winstonhowes@gmail.com>"
+  ],
+  "description": "An element creating a searchable, sortable, list of files.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "searchable",
+    "sortable",
+    "file",
+    "list"
+  ],
+  "main": "file-list.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/winhowes/file-list/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.0",
+    "neon-animation": "PolymerElements/neon-animation#~1.0.1"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "5deda10106",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5deda101062f67e86506d1ff38b5bc796de68b0b"
+  },
+  "_source": "git://github.com/winhowes/file-list.git",
+  "_target": "master",
+  "_originalSource": "winhowes/file-list",
+  "_direct": true
+}
