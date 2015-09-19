@@ -124,20 +124,66 @@ Example:
     [hidden] {
       display: none;
     }
+	
+	.fab {
+      position: absolute;
+      display: inline-block;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      color: #fff;
+      overflow: hidden;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	  z-index: 1;
+
+    }
+	
+	.fab:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    .fab > iron-icon {
+      margin: 11px;
+    }
+
+    .fab > iron-icon::shadow path {
+      fill: #fff;
+    }
+	
+    .fab.red {
+        background-color: #d23f31;
+	    left: 13%;
+	    bottom: 5%
+    }
+	
+	.fab.save {
+	    background-color: #d23f31;
+	    left: 13%;
+	    bottom: 15%
+	}
   </style>
 
   <template>
     <div hidden$="{{_hasElements(_files)}}">
     <content></content>
     </div>
+	<div class="fab red">
+        <iron-icon icon="add" on-click="saveMenu"></iron-icon>
+    </div>	
+    <div class="fab save">
+        <iron-icon icon="save" on-click="newMenu"></iron-icon>
+    </div>
     <paper-material>
       <template is="dom-repeat" items="{{_files}}">
         <div class="row">
           <iron-icon icon="{{item.preview}}" class="clickable" on-click="open"></iron-icon>
           <span class="clickable nameDisplay responsiveText" title$="{{item.name}}" on-click="open">{{item.name}}</span>
-          <span class="nameEdit">
+          <!--span class="nameEdit">
             <input type="text" value="{{item.name}}" on-blur="saveRename" on-keydown="saveRename">
-          </span>
+          </span-->
           <!--span>{{item.type}}</span>
           <span class="responsiveText">{{item.dateModified}}</span>
           <div class="hidden">
@@ -164,7 +210,9 @@ Example:
             </file-menu>
           </div-->
         </div>
+
       </template>
+
     </paper-material>
   </template>
 
@@ -310,6 +358,14 @@ Example:
      * @event delete
     */
 
+    saveMenu: function(e) {
+	   this.fire("save", e.model__data__)
+	},
+	
+	newMenu: function(e) {
+	   this.fire("new", e.model__data__)
+	},
+	
     /**
      * `open` is called when a file is clicked and fires a open event
      *
