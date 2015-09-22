@@ -153,7 +153,7 @@ Example:
       fill: #fff;
     }
 	
-    .fab.red {
+    .fab.add {
         background-color: #d23f31;
 	    left: 13%;
 	    bottom: 5%
@@ -170,11 +170,11 @@ Example:
     <div hidden$="{{_hasElements(_files)}}">
     <content></content>
     </div>
-	<div class="fab red">
-        <iron-icon icon="add" on-click="saveMenu"></iron-icon>
+	<div class="fab add">
+        <iron-icon icon="add" on-click="addMenu"></iron-icon>
     </div>	
     <div class="fab save">
-        <iron-icon icon="save" on-click="newMenu"></iron-icon>
+        <iron-icon icon="save" on-click="saveMenu"></iron-icon>
     </div>
     <paper-material>
       <template is="dom-repeat" items="{{_files}}">
@@ -362,8 +362,8 @@ Example:
 	   this.fire("save", e.model__data__)
 	},
 	
-	newMenu: function(e) {
-	   this.fire("new", e.model__data__)
+	addMenu: function(e) {
+	   this.fire("add", e.model__data__)
 	},
 	
     /**
